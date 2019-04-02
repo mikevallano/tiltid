@@ -55,7 +55,7 @@ group :development, :test do
   gem 'ffaker'
   gem 'awesome_print'
   gem 'rspec-rails', '~> 3.6'
-  gem 'factory_girl_rails'
+  gem "factory_bot_rails"
   gem 'letter_opener'
   # gem 'capybara-email'
   gem 'guard-rspec', require: false
