@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.2'
+gem 'rails', '~> 5.2.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
@@ -57,7 +57,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.6'
   gem 'factory_girl_rails'
   gem 'letter_opener'
-  gem 'capybara-email'
+  # gem 'capybara-email'
   gem 'guard-rspec', require: false
   gem 'terminal-notifier-guard'
   gem 'spring-commands-rspec'
@@ -66,7 +66,7 @@ end
 
 group :test do
     gem 'shoulda-matchers'
-    gem 'capybara'
+    # gem 'capybara'
     gem 'database_cleaner'
     gem 'launchy'
     gem 'webmock'
