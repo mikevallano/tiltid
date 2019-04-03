@@ -12,17 +12,12 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @til_log.body %>
+  <%= markdown_display(@til_log.body) %>
 </p>
 
 <p>
   <strong>Public:</strong>
   <%= @til_log.public %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @til_log.user %>
 </p>
 
 <%= link_to 'Edit', edit_til_log_path(@til_log) %> |

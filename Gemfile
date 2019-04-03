@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'acts-as-taggable-on'
-# gem 'coderay'
+gem 'coderay'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'pg', '~> 0.18'
@@ -14,7 +14,7 @@ gem 'puma', '~> 3.7'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-# gem 'redcarpet'
+gem 'redcarpet'
 gem 'rails', '~> 5.2.2'
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'

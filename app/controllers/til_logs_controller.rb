@@ -83,7 +83,7 @@ class TilLogsController < ApplicationController
       params.require(:til_log).permit(:title, :body, :public, :user_id, :tag_list)
     end
 
-    def validate_learning_user
+    def validate_til_log_user
       unless @til_log.user == current_user
         redirect_to til_logs_path, notice: "Not authorized to view that learning"
       end
