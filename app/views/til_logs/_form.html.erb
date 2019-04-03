@@ -13,28 +13,28 @@
 
   <div class="field">
     <%= form.label :tags %>
-    <%= form.text_field :tag_list %>
+    <%= form.text_field :tag_list, placeholder: 'Add tags, separated by comma', class: 'form-control' %>
   </div>
 
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, class: 'form-control', id: 'til-log-body-text-field' %>
   </div>
 
   <div class="field">
     <%= form.label :public %>
-    <%= form.check_box :public %>
+    <%= form.check_box :public, class: 'form-control' %>
   </div>
 
   <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-success' %>
   </div>
 <% end %>

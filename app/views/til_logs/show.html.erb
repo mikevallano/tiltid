@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @til_log.title %>
@@ -10,10 +8,9 @@
   <%= tag_links(@til_log.tag_list) %>
 </p>
 
-<p>
-  <strong>Body:</strong>
+<div class="bg-light border border-dark p-2">
   <%= markdown_display(@til_log.body) %>
-</p>
+</div>
 
 <p>
   <strong>Public:</strong>
