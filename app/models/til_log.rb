@@ -1,5 +1,11 @@
 class TilLog < ApplicationRecord
+  include PgSearch
   acts_as_taggable
+  pg_search_scope :search_for,
+                   against: %i(title body),
+                    using: {
+                     tsearch: { prefix: true }
+                    }
 
   belongs_to :user
 end

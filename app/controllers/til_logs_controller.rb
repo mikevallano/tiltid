@@ -11,7 +11,7 @@ class TilLogsController < ApplicationController
       @til_logs = @til_logs.tagged_with(params[:tag])
     end
     if params[:search]
-      # do stuff
+      @til_logs = @til_logs.search_for(params[:search])
     end
   end
 

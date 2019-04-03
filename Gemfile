@@ -10,6 +10,7 @@ gem 'coderay'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'pg', '~> 0.18'
+gem 'pg_search'
 gem 'puma', '~> 3.7'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -43,7 +44,7 @@ end
 
 group :development, :test do
   gem 'pry'
-  gem 'ffaker'
+  gem 'faker'
   gem 'awesome_print'
   gem 'rspec-rails', '~> 3.6'
   gem "factory_bot_rails"
