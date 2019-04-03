@@ -1,0 +1,21 @@
+<p>
+  <strong>Title:</strong>
+  <%= @til_log.title %>
+</p>
+
+<p>
+  <strong>Tags</strong>
+  <%= tag_links(@til_log.tag_list) %>
+</p>
+
+<div class="bg-light border border-dark p-2">
+  <%= markdown_display(@til_log.body) %>
+</div>
+
+<p>
+  <strong>Public:</strong>
+  <%= @til_log.public %>
+</p>
+
+<%= link_to 'Edit', edit_til_log_path(@til_log) %> |
+<%= link_to 'Back', til_logs_path %>

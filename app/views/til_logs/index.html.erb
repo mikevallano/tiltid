@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Til Logs <%= "tagged with '#{params[:tag]}'" if params[:tag] %></h1>
+
+
+<div class='container'>
+  <% @til_logs.each do |til_log| %>
+  <div class="row bg-light border border-dark mt-2 rounded p-2">
+    <div class="col-8">
+      <%= til_log.title %>
+    </div>
+    <div class="col-2">
+      <%= til_log.created_at.to_date.to_s %>
+    </div>
+    <div class="col-1">
+      <%= link_to 'edit', edit_til_log_path(til_log), class: 'btn btn-outline-primary btn-sm' %>
+    </div>
+    <div class="col-1">
+      <%= link_to 'view', til_log_path(til_log), class: 'btn btn-outline-primary btn-sm' %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<%= link_to 'New Til Log', new_til_log_path %>
