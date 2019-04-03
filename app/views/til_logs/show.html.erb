@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @til_log.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @til_log.body %>
+</p>
+
+<p>
+  <strong>Public:</strong>
+  <%= @til_log.public %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @til_log.user %>
+</p>
+
+<%= link_to 'Edit', edit_til_log_path(@til_log) %> |
+<%= link_to 'Back', til_logs_path %>

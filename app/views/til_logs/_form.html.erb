@@ -1,0 +1,34 @@
+<%= form_with(model: til_log, local: true) do |form| %>
+  <% if til_log.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(til_log.errors.count, "error") %> prohibited this til_log from being saved:</h2>
+
+      <ul>
+      <% til_log.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+  </div>
+
+  <%= form.hidden_field :user_id, value: current_user.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
