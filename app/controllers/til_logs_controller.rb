@@ -1,15 +1,26 @@
 class TilLogsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_til_log, only: [:show, :edit, :update, :destroy]
+  before_action :validate_til_log_user, only: [:edit, :update, :destroy]
 
   # GET /til_logs
   # GET /til_logs.json
   def index
-    @til_logs = TilLog.all
+    @til_logs = current_user.til_logs
+    if params[:tag]
+      @til_logs = @til_logs.tagged_with(params[:tag])
+    end
+    if params[:search]
+      # do stuff
+    end
   end
 
   # GET /til_logs/1
   # GET /til_logs/1.json
   def show
+    unless @til_log.user == current_user || @til_log.public?
+      redirect_to til_logs_path, notice: 'Not authorized to view that.'
+    end
   end
 
   # GET /til_logs/new
@@ -69,6 +80,12 @@ class TilLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def til_log_params
-      params.require(:til_log).permit(:title, :body, :public, :user_id)
+      params.require(:til_log).permit(:title, :body, :public, :user_id, :tag_list)
+    end
+
+    def validate_learning_user
+      unless @til_log.user == current_user
+        redirect_to til_logs_path, notice: "Not authorized to view that learning"
+      end
     end
 end
