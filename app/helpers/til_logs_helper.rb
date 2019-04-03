@@ -25,4 +25,14 @@ module TilLogsHelper
       link_to tag, til_logs_path(tag: tag)
     end.join(', ').html_safe
   end
+
+  def index_filter_text
+    search = params[:search]
+    tag = params[:tag]
+    if search
+      "matching query '#{search}'"
+    elsif tag
+      "tagged with '#{tag}'"
+    end
+  end
 end

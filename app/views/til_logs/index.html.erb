@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Til Logs <%= "tagged with '#{params[:tag]}'" if params[:tag] %></h1>
+<h1>TIl Logs <%= index_filter_text %></h1>
 
 
 <div class='container'>
@@ -23,5 +23,9 @@
 </div>
 
 <br>
+
+<% if params[:search] || params[:tag] %>
+  <%= link_to 'All Til Logs', til_logs_path %><br/>
+<% end %>
 
 <%= link_to 'New Til Log', new_til_log_path %>
