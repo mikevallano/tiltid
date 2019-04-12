@@ -1,5 +1,5 @@
 class TilLogsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   before_action :set_til_log, only: [:show, :edit, :update, :destroy]
   before_action :validate_til_log_user, only: [:edit, :update, :destroy]
 
@@ -20,7 +20,7 @@ class TilLogsController < ApplicationController
   # GET /til_logs/1.json
   def show
     unless @til_log.user == current_user || @til_log.public?
-      redirect_to til_logs_path, notice: 'Not authorized to view that.'
+      redirect_to root_path, notice: 'Not authorized to view that.'
     end
   end
 
