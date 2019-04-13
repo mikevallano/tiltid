@@ -17,5 +17,6 @@
   <%= @til_log.public %>
 </p>
 
-<%= link_to 'Edit', edit_til_log_path(@til_log) %> |
-<%= link_to 'Back', til_logs_path %>
+<%= link_to 'Edit', edit_til_log_path(@til_log), class: 'btn btn-warning btn-sm' %> |
+<%= link_to 'Back', til_logs_path, class: 'btn btn-outline-primary btn-sm' %> |
+<%= link_to 'Add New Til Log', new_til_log_path, class: 'btn btn-outline-success btn-sm' %>
