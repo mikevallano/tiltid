@@ -4,10 +4,17 @@
 
 
 <div class='container'>
+  <div class="row">
+    <div class="col-8"><strong>Title</strong></div>
+    <div class="col-2"><strong>Created At</strong></div>
+    <div class="col-1"><strong>Edit</strong></div>
+    <div class="col-1"><strong>View</strong></div>
+  </div>
+</div>
   <% @til_logs.each do |til_log| %>
   <div class="row bg-light border border-dark mt-2 rounded p-2">
     <div class="col-8">
-      <%= til_log.title %>
+      <%= link_to til_log.title, til_log_path(til_log), class: 'index-title-link' %>
     </div>
     <div class="col-2">
       <%= til_log.created_at.to_date.to_s %>

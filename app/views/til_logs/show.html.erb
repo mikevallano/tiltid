@@ -1,22 +1,19 @@
-<p>
-  <strong>Title:</strong>
-  <%= @til_log.title %>
-</p>
-
-<p>
-  <strong>Tags</strong>
-  <%= tag_links(@til_log.tag_list) %>
-</p>
-
-<div class="bg-light border border-dark p-2">
-  <%= markdown_display(@til_log.body) %>
+<div class="card mt-3">
+  <h2 class="card-header">
+    <%= @til_log.title %>
+  </h2>
+  <div class="card-body pb-1">
+    <div class="card-text bg-light border border-dark p-2 rounded mb-2"><%= markdown_display(@til_log.body) %></div
+      <p>
+        <strong>Public:</strong>
+        <%= @til_log.public %> |
+        <strong>Tags:</strong>
+        <%= tag_links(@til_log.tag_list) %>
+      </p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to 'Edit', edit_til_log_path(@til_log), class: 'btn btn-warning btn-sm' %>
+    <%#= link_to 'Back', til_logs_path, class: 'btn btn-outline-primary btn-sm' %>
+    <%= link_to 'Add New Til Log', new_til_log_path, class: 'btn btn-outline-success btn-sm' %>
+  </div>
 </div>
-
-<p>
-  <strong>Public:</strong>
-  <%= @til_log.public %>
-</p>
-
-<%= link_to 'Edit', edit_til_log_path(@til_log), class: 'btn btn-warning btn-sm' %> |
-<%= link_to 'Back', til_logs_path, class: 'btn btn-outline-primary btn-sm' %> |
-<%= link_to 'Add New Til Log', new_til_log_path, class: 'btn btn-outline-success btn-sm' %>
