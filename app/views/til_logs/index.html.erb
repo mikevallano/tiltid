@@ -31,10 +31,10 @@
 
 <br>
 
-<%= will_paginate(@til_logs) %>
+<div class="container pb-3">
+  <%= will_paginate(@til_logs) %>
 
-<% if params[:search] || params[:tag] %>
-  <%= link_to 'All Til Logs', til_logs_path %><br/>
-<% end %>
-
-<%= link_to 'New Til Log', new_til_log_path %>
+  <% if params[:search] || params[:tag] %>
+    <%= link_to 'All Til Logs', til_logs_path %><br/>
+  <% end %>
+</div>
