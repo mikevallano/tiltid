@@ -13,7 +13,7 @@ class TilLogsController < ApplicationController
     if params[:search]
       @til_logs = @til_logs.search_for(params[:search])
     end
-    @til_logs = @til_logs.paginate(page: params[:page], per_page: 10)
+    @til_logs = @til_logs.ordered.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /til_logs/1
