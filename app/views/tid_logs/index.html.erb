@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>TID Logs <%= index_filter_text %></h1>
+
+
+<div class='container'>
+  <div class="row">
+    <div class="col-8"><strong>Title</strong></div>
+    <div class="col-2"><strong>Created At</strong></div>
+    <div class="col-1"><strong>Edit</strong></div>
+    <div class="col-1"><strong>View</strong></div>
+  </div>
+</div>
+  <% @tid_logs.each do |tid_log| %>
+  <div class="row bg-light border border-dark mt-2 rounded p-2">
+    <div class="col-8">
+      <%= link_to tid_log.title, tid_log_path(tid_log), class: 'index-title-link' %>
+    </div>
+    <div class="col-2">
+      <%= tid_log.created_at.to_date.to_s %>
+    </div>
+    <div class="col-1">
+      <%= link_to 'edit', edit_tid_log_path(tid_log), class: 'btn btn-outline-primary btn-sm' %>
+    </div>
+    <div class="col-1">
+      <%= link_to 'view', tid_log_path(tid_log), class: 'btn btn-outline-primary btn-sm' %>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<br>
+
+<div class="container pb-3">
+  <%= will_paginate(@tid_logs) %>
+
+  <% if params[:search] || params[:tag] %>
+    <%= link_to 'All Tid Logs', tid_logs_path %><br/>
+  <% end %>
+</div>

@@ -1,0 +1,19 @@
+<div class="card mt-3">
+  <h2 class="card-header">
+    <%= @tid_log.title %>
+  </h2>
+  <div class="card-body pb-1">
+    <div class="card-text bg-light border border-dark p-2 rounded mb-2"><%= markdown_display(@tid_log.body) %></div
+      <p>
+        <strong>Public:</strong>
+        <%= @tid_log.public %> |
+        <strong>Tags:</strong>
+        <%= tag_links(@tid_log.tag_list) %>
+      </p>
+  </div>
+  <div class="card-footer text-muted">
+    <%= link_to 'Edit', edit_tid_log_path(@tid_log), class: 'btn btn-warning btn-sm' %>
+    <%#= link_to 'Back', tid_logs_path, class: 'btn btn-outline-primary btn-sm' %>
+    <%= link_to 'Add New Tid Log', new_tid_log_path, class: 'btn btn-outline-success btn-sm' %>
+  </div>
+</div>
