@@ -7,7 +7,7 @@ end
 
 gem 'acts-as-taggable-on'
 gem 'coderay'
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0'
 gem 'devise'
 gem 'pg', '~> 0.18'
 gem 'pg_search'
