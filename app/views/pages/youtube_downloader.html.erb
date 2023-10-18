@@ -1,0 +1,6 @@
+<h1>Youtube to Mp3</h1>
+
+<%= form_with url: :pages_download_youtube, method: :get, data: { turbolinks: false, turbo: false, remote: false } do |form| %>
+  <%= form.text_field :video_url %>
+  <%= form.submit "Get it", data: { disable_with: "Please wait..." } %>
+<% end %>
