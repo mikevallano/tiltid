@@ -272,6 +272,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -313,7 +314,7 @@ DEPENDENCIES
   will_paginate
 
 RUBY VERSION
-   ruby 2.7.6p219
+   ruby 2.7.8p225
 
 BUNDLED WITH
    2.3.25
